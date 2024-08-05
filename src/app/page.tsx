@@ -1,3 +1,6 @@
+'use client'
+
+/*
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -92,4 +95,57 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+
+*/
+
+//import Header from '../app/Header'
+import { Button, Layout, Typography } from "antd"
+import React from "react"
+import {QuestionCircleOutlined, QuestionOutlined} 
+from '@ant-design/icons'
+
+const { Header, Footer, Sider, Content } = Layout;
+const {Text,Title} = Typography;
+const headerStyle: React.CSSProperties = {
+  textAlign: 'center',
+  color: '#fff',
+  height: 64,
+  paddingInline: 48,
+  lineHeight: '64px',
+  backgroundColor: '#4096ff',
+};
+export default function Homepage() {
+
+  return <>
+  <Layout>
+  <Header style={headerStyle} >
+
+  <Title  
+        level={5}
+        style={{
+          alignContent:'center',
+          justifyContent:'center',
+          textAlign:'center',
+          margin: 0,
+          color:"white",
+        }}>Support our team is trekking the Salkantay Trail in Peru & raising $ 500,00 for church planting!</Title>
+
+  </Header>
+  <Content className="container">
+  <QuestionCircleOutlined  style={{ fontSize: '32px', color: '#08c' }}/>
+<Button type="text" size="large">About</Button>
+<Button type="text">Get Involved</Button>
+<Button type="text">Resources</Button>
+<Button>GIVE</Button>
+  </Content>
+<Footer>footer</Footer>
+
+
+  </Layout>
+
+  
+  
+  </>
 }
