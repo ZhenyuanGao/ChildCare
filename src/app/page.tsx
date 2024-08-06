@@ -1,151 +1,179 @@
 'use client'
 
-/*
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
-
-
-*/
-
 //import Header from '../app/Header'
-import { Button, Layout, Typography } from "antd"
-import React from "react"
-import {QuestionCircleOutlined, QuestionOutlined} 
+import { Button, Card, Divider, Flex, Image, Layout, Space, Typography,ConfigProvider, Row, Col } from "antd"
+import React ,{useContext}from "react"
+import {AntDesignOutlined, QuestionCircleOutlined, QuestionOutlined} 
 from '@ant-design/icons'
+import dynamic from 'next/dynamic'
+import { css ,cx} from '@emotion/css'
+import SiteFooter from "./Footer"
+import {FaXTwitter, FaInstagram, FaSlack, FaYoutube} from "react-icons/fa6"
 
 const { Header, Footer, Sider, Content } = Layout;
 const {Text,Title} = Typography;
 const headerStyle: React.CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
-  height: 64,
-  paddingInline: 48,
-  lineHeight: '64px',
-  backgroundColor: '#4096ff',
-};
-export default function Homepage() {
 
+ backgroundColor:'white'
+};
+
+function Homepage() {
+  const { getPrefixCls } = useContext(ConfigProvider.ConfigContext);
+  const rootPrefixCls = getPrefixCls();
+  const linearGradientButton = css`
+    &.${rootPrefixCls}-btn-primary:not([disabled]):not(.${rootPrefixCls}-btn-dangerous) {
+      border-width: 0;
+
+      > span {
+        position: relative;
+      }
+
+      &::before {
+        content: '';
+        background: linear-gradient(135deg, #6253E1, #04BEFE);
+        position: absolute;
+        inset: 0;
+        opacity: 1;
+        transition: all 0.3s;
+        border-radius: inherit;
+      }
+
+      &:hover::before {
+        opacity: 0;
+      }
+    }
+  ` ;
+  //const nonNullClassName: string = linearGradientButton as string;
+  const SignInMessage =  `Can't wait, please let us know more about you`;
+  const ChurchMessage = 'We help you start new churches that thrive, grow, and multiply';
+  const imgStyle: React.CSSProperties = {
+    display: 'block',
+    maxWidth: 473,
+    transform: 'rotate(10deg)', 
+  border: '2px solid #000', 
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  };
+  const imgStyleRev: React.CSSProperties = {
+    display: 'block',
+    maxWidth: 473,
+    transform: 'rotate(-10deg)', 
+  border: '2px solid #000', 
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  };
+  const socials = [
+		{
+			title: "X (Twitter)",
+			url: "",
+			icon: <FaXTwitter className="text-xl md:ml-8 text-primary-500 hover:text-primary-700 transition duration-300" />,
+		},
+		{
+			title: "Instagram",
+			url: "",
+			icon: <FaInstagram className="text-xl md:ml-8 text-primary-500 hover:text-primary-700 transition duration-300" />,
+		},
+		{
+			title: "Slack",
+			url: "",
+			icon: <FaSlack className="text-xl md:ml-8 text-primary-500 hover:text-primary-700 transition duration-300" />,
+		},
+		{
+			title: "YouTube",
+			url: "",
+			icon: <FaYoutube className="text-xl md:ml-8 text-primary-500 hover:text-primary-700 transition duration-300" />,
+		},
+	]
   return <>
   <Layout>
   <Header style={headerStyle} >
-
-  <Title  
-        level={5}
-        style={{
-          alignContent:'center',
-          justifyContent:'center',
-          textAlign:'center',
-          margin: 0,
-          color:"white",
-        }}>Support our team is trekking the Salkantay Trail in Peru & raising $ 500,00 for church planting!</Title>
+  <Flex justify="space-between" align="flex-start">
+   <div>   
+   <AntDesignOutlined/>
+  </div>  
+<div>
+{socials.map((item)=>{
+return (<><Button type="text" size="large" icon={item.icon}></Button></>)
+})}
+</div>
+</Flex>
+ 
 
   </Header>
-  <Content className="container">
-  <QuestionCircleOutlined  style={{ fontSize: '32px', color: '#08c' }}/>
+  <Card className="container">
+    <Flex justify="space-between" align="flex-start">
+   <div>   
+  <QuestionCircleOutlined  style={{ fontSize: '10px', color: '#08c' }}/>
+  </div>  
+<div>
 <Button type="text" size="large">About</Button>
 <Button type="text">Get Involved</Button>
-<Button type="text">Resources</Button>
-<Button>GIVE</Button>
-  </Content>
-<Footer>footer</Footer>
+<Button type="text">Meet Our Team</Button>
+<Button type="primary" color="purple">Fill the Form</Button>
+</div>
+</Flex>
 
+<Divider plain></Divider>
+
+<Row  style={{padding:'20px'}}>
+<Col md={1}>
+<Space direction="vertical"> 
+   <Title level={2} style={{maxWidth:'500px'}}>{ChurchMessage}</Title>
+   <ConfigProvider
+      button={{
+          className:linearGradientButton,
+      }}
+    >
+      <Space>
+        <Button type="primary" size="large" icon={<AntDesignOutlined/>}>
+          Start Now
+        </Button>
+      </Space>
+    </ConfigProvider>
+</Space>
+</Col>
+<Col md={1}>
+<Image  alt="avatar"
+        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        style={imgStyle}
+        preview={false}
+        >
+        </Image>
+
+        </Col>
+</Row>
+
+<Flex justify="space-around" align="center">
+
+<div>
+<Image  alt="avatar"
+        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        style={imgStyleRev}
+        preview={false}
+        >
+        </Image>
+
+        </div>
+<div>
+<Space direction="vertical"> 
+   <Title level={2} style={{maxWidth:'500px'}}>{SignInMessage}</Title>
+   <ConfigProvider
+      button={{
+          className:linearGradientButton,
+      }}
+    >
+      <Space>
+      <Button size="large">Button</Button>
+
+      </Space>
+    </ConfigProvider>
+</Space>
+</div>
+</Flex>
+
+  </Card>
 
   </Layout>
 
-  
-  
   </>
 }
+
+export default dynamic(()=> Promise.resolve(Homepage),{ssr:false})

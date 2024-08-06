@@ -1,12 +1,10 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: url('../../public/background.png') no-repeat center center fixed;
-  background-size: cover; /* Ensure the image covers the entire viewport */
-}
+
+
+
 
 .container {
-  margin: 20px; /* Adjust the margin as needed */
+  margin: 0; /* Adjust the margin as needed */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
