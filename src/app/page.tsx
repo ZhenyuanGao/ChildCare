@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic'
 import { css ,cx} from '@emotion/css'
 import SiteFooter from "./Footer"
 import {FaXTwitter, FaInstagram, FaSlack, FaYoutube} from "react-icons/fa6"
+import MainPageContent from "./MainPageContent"
 
 const { Header, Footer, Sider, Content } = Layout;
 const {Text,Title} = Typography;
@@ -98,79 +99,7 @@ return (<><Button type="text" size="large" icon={item.icon}></Button></>)
  
 
   </Header>
-  <Card className="container">
-    <Flex justify="space-between" align="flex-start">
-   <div>   
-  <QuestionCircleOutlined  style={{ fontSize: '10px', color: '#08c' }}/>
-  </div>  
-<div>
-<Button type="text" size="large">About</Button>
-<Button type="text">Get Involved</Button>
-<Button type="text">Meet Our Team</Button>
-<Button type="primary" color="purple">Fill the Form</Button>
-</div>
-</Flex>
-
-<Divider plain></Divider>
-
-<Row  style={{padding:'20px'}}>
-<Col md={1}>
-<Space direction="vertical"> 
-   <Title level={2} style={{maxWidth:'500px'}}>{ChurchMessage}</Title>
-   <ConfigProvider
-      button={{
-          className:linearGradientButton,
-      }}
-    >
-      <Space>
-        <Button type="primary" size="large" icon={<AntDesignOutlined/>}>
-          Start Now
-        </Button>
-      </Space>
-    </ConfigProvider>
-</Space>
-</Col>
-<Col md={1}>
-<Image  alt="avatar"
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        style={imgStyle}
-        preview={false}
-        >
-        </Image>
-
-        </Col>
-</Row>
-
-<Flex justify="space-around" align="center">
-
-<div>
-<Image  alt="avatar"
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        style={imgStyleRev}
-        preview={false}
-        >
-        </Image>
-
-        </div>
-<div>
-<Space direction="vertical"> 
-   <Title level={2} style={{maxWidth:'500px'}}>{SignInMessage}</Title>
-   <ConfigProvider
-      button={{
-          className:linearGradientButton,
-      }}
-    >
-      <Space>
-      <Button size="large">Button</Button>
-
-      </Space>
-    </ConfigProvider>
-</Space>
-</div>
-</Flex>
-
-  </Card>
-
+<MainPageContent></MainPageContent>
   </Layout>
 
   </>

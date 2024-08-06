@@ -4,7 +4,15 @@
 
 .container {
   margin: 0; /* Adjust the margin as needed */
+  padding:10px;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+  }
 }
 
