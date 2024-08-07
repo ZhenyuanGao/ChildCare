@@ -9,6 +9,9 @@ import { css } from '@emotion/css'
 import getTaskBarButtons from '../../UtilityFunctions/getTaskBarButtons'
 import type { MenuProps } from 'antd';
 import "./MainContentPage.css";
+import LeftImageDisplay from "../../ReusableComponents/LeftImageDisplay"
+import ImageandWordsDisplay from "../../ReusableComponents/ImageandWordsDisplay"
+import MissionStatement from "../../ReusableComponents/MissionStatement"
 
 const MainPageContent:React.FC= ()=>{
     const {Text,Title} = Typography;
@@ -82,91 +85,17 @@ return (
 </Flex>
 
 <Divider plain style={{padding:"5rem"}}></Divider>
-<Space size={'large'}><div></div><div></div></Space>
 
-<Flex wrap={true} gap={'large'} justify="space-around" align="center">
-<div         className="right_image_pos" style={{padding:'40px'}}>
-<Image  alt="avatar"
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        className="right_image_pos"
-        preview={false}
-        >
-        </Image>
-        </div>
-<Flex vertical gap={'large'}  justify="flex-start"> 
-   <Title level={2} style={{maxWidth:'500px'}}>{ChurchMessage}</Title>
-   <ConfigProvider
-      button={{
-          className:linearGradientButton,
-      }}
-    >
-      <Space>
-        <Button type="primary" size="large" shape="round" icon={<AntDesignOutlined/>}>
-          Start Now
-        </Button>
-      </Space>
-    </ConfigProvider>
-</Flex>
-
-</Flex>
+<LeftImageDisplay></LeftImageDisplay>
 
 <div  style={{padding:"10rem"}}></div>
 
-<Flex wrap={true} gap={'large'} justify="space-around" align="center" className="picture_horizontal">
-<Flex vertical gap={'large'}  justify="flex-start"> 
-    
-    <Title level={2} style={{maxWidth:'500px'}}>{ChurchMessage}</Title>
-    <ConfigProvider
-       button={{
-           className:linearGradientButton,
-       }}
-     >
-       <Space>
-         <Button type="primary" size="large" shape="round" icon={<AntDesignOutlined/>}>
-           Start Now
-         </Button>
-       </Space>
-     </ConfigProvider>
- </Flex>
-<div         className="right_image_pos" style={{padding:'40px'}}>
-<Image  alt="avatar"
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        className="right_image_pos"
-        preview={false}
-        >
-        </Image>
-        </div>
+<ImageandWordsDisplay direction="right"></ImageandWordsDisplay>
+
+<div  style={{padding:"10rem"}}></div>
 
 
-</Flex>
-<Flex wrap={true} gap={'large'} justify="space-around" align="center" className="picture_vertical">
-<div         className="right_image_pos" style={{padding:'40px'}}>
-<Image  alt="avatar"
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        className="right_image_pos"
-        preview={false}
-        >
-        </Image>
-        </div>
-<Flex vertical gap={'large'}  justify="flex-start"> 
-    
-    <Title level={2} style={{maxWidth:'500px'}}>{ChurchMessage}</Title>
-    <ConfigProvider
-       button={{
-           className:linearGradientButton,
-       }}
-     >
-       <Space>
-         <Button type="primary" size="large" shape="round" icon={<AntDesignOutlined/>}>
-           Start Now
-         </Button>
-       </Space>
-     </ConfigProvider>
- </Flex>
-
-
-
-</Flex>
+<MissionStatement></MissionStatement>
 
   </Card>
 
