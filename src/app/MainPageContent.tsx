@@ -12,6 +12,9 @@ import "./MainContentPage.css";
 import LeftImageDisplay from "../../ReusableComponents/LeftImageDisplay"
 import ImageandWordsDisplay from "../../ReusableComponents/ImageandWordsDisplay"
 import MissionStatement from "../../ReusableComponents/MissionStatement"
+import ListView from "./ListView"
+import DisplayStatics from "../../ReusableComponents/DisplayStatics"
+import FourCardsDisplay from "../../ReusableComponents/FourCardsDisplay"
 
 const MainPageContent:React.FC= ()=>{
     const {Text,Title} = Typography;
@@ -96,6 +99,15 @@ return (
 
 
 <MissionStatement></MissionStatement>
+
+
+
+<ListView></ListView>
+
+<DisplayStatics></DisplayStatics>
+
+<FourCardsDisplay></FourCardsDisplay>
+
 
   </Card>
 
