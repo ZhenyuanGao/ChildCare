@@ -10,6 +10,9 @@ import { css ,cx} from '@emotion/css'
 import SiteFooter from "./Footer"
 import {FaXTwitter, FaInstagram, FaSlack, FaYoutube} from "react-icons/fa6"
 import MainPageContent from "./MainPageContent"
+import CustimizedHeader from "./CustomizedHeader"
+import { AppProps } from "next/app"
+import ComponentLayout from "@/Components/ComponentLayout"
 
 const { Header, Footer, Sider, Content } = Layout;
 const {Text,Title} = Typography;
@@ -18,7 +21,7 @@ const headerStyle: React.CSSProperties = {
  backgroundColor:'white'
 };
 
-function Homepage() {
+function Homepage({ Component, pageProps }: AppProps) {
   const { getPrefixCls } = useContext(ConfigProvider.ConfigContext);
   const rootPrefixCls = getPrefixCls();
   const linearGradientButton = css`
@@ -84,25 +87,17 @@ function Homepage() {
 		},
 	]
   return <>
-  <Layout>
-  <Header style={headerStyle} >
-  <Flex justify="space-between" align="flex-start">
-   <div>   
-   <AntDesignOutlined/>
-  </div>  
-<div>
-{socials.map((item)=>{
-return (<><Button type="text" size="large" icon={item.icon}></Button></>)
-})}
-</div>
-</Flex>
- 
 
-  </Header>
-<MainPageContent></MainPageContent>
-  </Layout>
+
+
+
+  <MainPageContent></MainPageContent>
+
 
   </>
 }
+
+
+//  <MainPageContent></MainPageContent>
 
 export default dynamic(()=> Promise.resolve(Homepage),{ssr:false})
