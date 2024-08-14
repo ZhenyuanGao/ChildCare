@@ -21,7 +21,7 @@ const GetTaskBarButton = (TaskBarArray)=>{
             </>)
 
         }else{
-            return (<><Button type={item.type} href={item.label}>{item.label}</Button>
+            return (<><Button type={item.type} href={item.label.toLowerCase()}>{item.label}</Button>
 
             </>)
         }

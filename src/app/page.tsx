@@ -21,7 +21,7 @@ const headerStyle: React.CSSProperties = {
  backgroundColor:'white'
 };
 
-function Homepage({ Component, pageProps }: AppProps) {
+function Homepage() {
   const { getPrefixCls } = useContext(ConfigProvider.ConfigContext);
   const rootPrefixCls = getPrefixCls();
   const linearGradientButton = css`
@@ -87,10 +87,6 @@ function Homepage({ Component, pageProps }: AppProps) {
 		},
 	]
   return <>
-
-
-
-
   <MainPageContent></MainPageContent>
 
 
