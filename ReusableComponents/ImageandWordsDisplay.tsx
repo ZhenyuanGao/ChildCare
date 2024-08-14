@@ -23,7 +23,6 @@ const ImageandWordsDisplay: React.FC<ImageandWordsDisplayFormat> = ({
   direction,
 }) => {
   const { Text, Title } = Typography;
-
   const { getPrefixCls } = useContext(ConfigProvider.ConfigContext);
   const rootPrefixCls = getPrefixCls();
   const linearGradientButton = css`
@@ -52,7 +51,6 @@ const ImageandWordsDisplay: React.FC<ImageandWordsDisplayFormat> = ({
     }
   `;
   //const nonNullClassName: string = linearGradientButton as string;
-  const SignInMessage = `Can't wait, please let us know more about you`;
   const ChurchMessage =
     "We help you start new churches that thrive, grow, and multiply";
 
@@ -63,7 +61,9 @@ const ImageandWordsDisplay: React.FC<ImageandWordsDisplayFormat> = ({
     );
   } else if(direction==='right') {
     return (
-    <><Flex wrap={true} gap={'large'} justify="space-around" align="center" className="picture_horizontal">
+    <>
+    <div className="picture_horizontal">
+    <Flex wrap={true} gap={'large'} justify="space-around" align="center" >
     <Flex vertical gap={'large'}  justify="flex-start"> 
         
         <Title level={2} style={{maxWidth:'500px'}}>{ChurchMessage}</Title>
@@ -87,10 +87,10 @@ const ImageandWordsDisplay: React.FC<ImageandWordsDisplayFormat> = ({
             >
             </Image>
             </div>
-    
-    
     </Flex>
-    <Flex wrap={true} gap={'large'} justify="space-around" align="center" className="picture_vertical">
+    </div>
+    <div className="picture_vertical">
+    <Flex wrap={true} gap={'large'} justify="space-around" align="center" >
     <div         className="right_image_pos" style={{padding:'40px'}}>
     <Image  alt="avatar"
             src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
@@ -114,11 +114,8 @@ const ImageandWordsDisplay: React.FC<ImageandWordsDisplayFormat> = ({
            </Space>
          </ConfigProvider>
      </Flex>
-    
-    
-    
     </Flex>
-    
+    </div>
     </>
     );
   }

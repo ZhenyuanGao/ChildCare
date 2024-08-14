@@ -1,5 +1,14 @@
 
-
+@media (max-width: 768px) {
+  .picture_horizontal{
+    display: none ; 
+  }
+}
+@media (min-width: 768px) {
+    .picture_vertical {
+      display:none ;
+    }
+  } 
 
 .right_image_pos {
     display: 'block';
@@ -26,17 +35,6 @@
   }
   @media (max-width: 768px) {
     .menu_horizontal {
-      display:none;
-    }
-  }
-  @media (max-width: 768px) {
-
-  .picture_horizontal{
-    display: none;
-  }
-}
-@media (min-width: 768px) {
-    .picture_vertical {
       display:none;
     }
   }
