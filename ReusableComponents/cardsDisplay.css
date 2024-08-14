@@ -1,0 +1,12 @@
+
+
+@media (min-width: 1280px) {
+    .flex_for_smallerscreen {
+      display: none;
+    }
+  }
+  @media (max-width: 1279px) {
+    .grid_for_largescreen {
+      display: none;
+    }
+  }

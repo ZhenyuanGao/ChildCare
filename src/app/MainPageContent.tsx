@@ -15,6 +15,7 @@ import MissionStatement from "../../ReusableComponents/MissionStatement"
 import ListView from "./ListView"
 import DisplayStatics from "../../ReusableComponents/DisplayStatics"
 import FourCardsDisplay from "../../ReusableComponents/FourCardsDisplay"
+import SCrollableBanner from "../../ReusableComponents/ScrollableBanner"
 
 const MainPageContent:React.FC= ()=>{
     const {Text,Title} = Typography;
@@ -58,7 +59,7 @@ const MainPageContent:React.FC= ()=>{
 
        //{getTaskBarButtons(TaskBarArray)}
 return (
-
+<>
 <Card className="container">
     <Flex justify="space-between" align="flex-start">
    <div>   
@@ -109,11 +110,13 @@ return (
 <FourCardsDisplay></FourCardsDisplay>
 
 
-  </Card>
 
+  </Card>
+</>
 )
 
 }
+//  <SCrollableBanner></SCrollableBanner>
 
 
 export default MainPageContent;
