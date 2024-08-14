@@ -16,17 +16,13 @@ const GetTaskBarButton = (TaskBarArray)=>{
 
     return (TaskBarArray.map((item)=>{
         if(item.color!==undefined){
-            return (<><Button type={item.type} style={{backgroundColor:item.color}}>{item.label}</Button>
-            
+            return (<><Button type={item.type} style={{backgroundColor:item.color}}>{item.label}</Button>          
             </>)
-
         }else{
             return (<><Button type={item.type} href={item.label.toLowerCase()}>{item.label}</Button>
 
             </>)
         }
-
-
     })
     
     )
